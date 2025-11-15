@@ -205,4 +205,25 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+#Fichier d'auto évaluation
 autoeval.pdf
+
+#Fichiers et dossiers généraux
+__pycache__/
+*.pyc
+.DS_Store
+
+#Environnement virutels
+venv/
+.venv/
+env/
+*venv*
+
+#Moodèles machine learning et data
+/src/models/*
+/data/*
+
+#Secrets et log(Base de données)
+.env
+*.log
