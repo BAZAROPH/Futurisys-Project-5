@@ -1,0 +1,20 @@
+#API
+fastapi
+uvicorn
+
+#Validation
+pydantic
+
+#Tests
+pytest
+pytest-cov
+
+#Machine Learning
+scikit-learn
+shap
+
+#Data science
+pandas
+numpy
+scipy
+seaborn
