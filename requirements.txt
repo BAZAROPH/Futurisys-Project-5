@@ -12,6 +12,8 @@ pytest-cov
 #Machine Learning
 scikit-learn
 shap
+category-encoders
+
 
 #Data science
 pandas
