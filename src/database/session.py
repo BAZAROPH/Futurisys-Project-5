@@ -2,7 +2,6 @@
 
 from sqlalchemy.orm import sessionmaker
 from src.database.create_db import engine
-from contextlib import contextmanager
 from sqlalchemy.orm import Session
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
