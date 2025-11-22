@@ -52,11 +52,8 @@ jobs:
           HF_USERNAME: ${{ secrets.HF_USERNAME }}
           HF_SPACE_NAME: ${{ secrets.HF_SPACE_NAME }}
         run: |
-          git config --global user.email "bazaroph@gmail.com"
-          git config --global user.name "GitHub Actions"
-          echo "Déploiement en production sur Hugging Face Spaces..."
-          git add .
-          git commit -m "Déploiement automatique depuis GitHub Actions" || echo "Aucun changement à committer"
-          git push https://$HF_TOKEN@huggingface.co/$HF_USERNAME/$HF_SPACE_NAME main
+          echo "Déploiement en production sur Hugging Face Spaces"
+          git remote add hf_remote https://${{ env.HF_USERNAME }}:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/${{ env.HF_USERNAME }}/${{ env.HF_SPACE_NAME }}
+          git push hf_remote main
 
       
