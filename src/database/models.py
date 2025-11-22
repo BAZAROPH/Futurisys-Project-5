@@ -1,9 +1,8 @@
 #fichier pour la création des modèles de base de données
 
 from sqlalchemy import Column, Integer, Float, String, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
-import json
+from sqlalchemy.orm import declarative_base
+from datetime import datetime, UTC
 
 Base = declarative_base()
 
@@ -15,7 +14,7 @@ class Interaction(Base):
     __tablename__ = "ml_interactions"
 
     id = Column(Integer, primary_key=True, index=True)
-    timestamp = Column(DateTime, default=datetime.utcnow)
+    timestamp = Column(DateTime, default=datetime.now(UTC))
 
     #Outputs du modèle
     prediction_class = Column(Integer, nullable=False)

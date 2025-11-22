@@ -4,27 +4,27 @@ name: Continuous Integration Pipeline
 
 #Déclencher le workflow sur les push et les pull requests visant la branche "develop"
 on:
-    push:
-        branches: [ develop ]
-    pull_request:
-        branches: [ develop ]
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
 
 jobs:
-    build_and_test:
+  build_and_test:
     #Exécuter la dernière version de ubuntu
     runs-on: ubuntu-latest
 
     #Stratégie de matrice pour tester sur différentes versions de python
     strategy:
-        matrix:
-            python-version: ["3.13"]
+      matrix:
+        python-version: ["3.13"]
 
     steps:
     - name: Checkout repository code
       uses: actions/checkout@v4
 
     #Configuration de l'environnement python
-    - name: Set up Python ${{ matri.python-version }}
+    - name: Set up Python ${{ matrix.python-version }}
       uses: action/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
