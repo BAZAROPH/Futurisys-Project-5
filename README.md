@@ -2,12 +2,9 @@
 ---
 title: Modèle de Prédiction des Démissions (API FastAPI)
 emoji: 📊
-colorFrom: green
-colorTo: blue
-sdk: docker 
+sdk: docker
 app_file: main.py
 ---
-
 # Projet Futurisys : Déploiement du Modèle Prédictif de Démissions
 
 ## 1. Présentation et Objectifs du Projet
