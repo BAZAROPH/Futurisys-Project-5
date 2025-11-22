@@ -220,8 +220,7 @@ venv/
 env/
 *venv*
 
-#Moodèles machine learning et data
-/src/models/*
+
 /data/*
 
 #Secrets et log(Base de données)
