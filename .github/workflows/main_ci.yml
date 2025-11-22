@@ -54,6 +54,6 @@ jobs:
         run: |
           echo "Déploiement en production sur Hugging Face Spaces"
           git remote add hf_remote https://${{ env.HF_USERNAME }}:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/${{ env.HF_USERNAME }}/${{ env.HF_SPACE_NAME }}
-          git push hf_remote main
+          git push hf_remote main --force
 
       
