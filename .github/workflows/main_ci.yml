@@ -81,13 +81,13 @@ jobs:
           # Installer les dépendances
           pip install -r requirements.txt
 
-      #EXECUTION DES TESTS
+      #EXECUTION DES TESTSs
       - name: Run pytest and generate coverage Report
         run: |
           #Pytest exécute tous les test unitaires et fonctionnels
           #--cov=src: Calcule la couverture du dossier src/ sur les tests
           #--vov-report=xml: Va générer le rapport XL nécessaire à l'intégration continue
-          pytest --cov-src --cov-report=xml
+          pytest --cov=src --cov-report=xml
       
 
       #Phase de déploiement
