@@ -1,4 +1,12 @@
 
+---
+title: Modèle de Prédiction des Démissions (API FastAPI)
+emoji: 📊
+sdk: python
+python_version: 3.10.12 # Version sécurisée utilisée par GitHub Actions
+app_file: main.py
+---
+
 # Projet Futurisys : Déploiement du Modèle Prédictif de Démissions
 
 ## 1. Présentation et Objectifs du Projet
