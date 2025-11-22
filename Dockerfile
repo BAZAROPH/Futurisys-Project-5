@@ -1,17 +1,22 @@
-FROM python:3.10
+# Exemple de structure du Dockerfile (à valider)
+FROM python:3.10-slim
 
-# Création du dossier de l'app
-WORKDIR /code
+# Définir le répertoire de travail
+WORKDIR /app
 
-# Installation des dépendances
-COPY requirements.txt /code/
+# Copier les fichiers essentiels
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copie du code
-COPY . /code/
+# Copier l'application, les scripts et les artefacts ML
+COPY . /app/
+# Assurez-vous que les fichiers .joblib sont copiés.
 
-# Exposer le port utilisé par Hugging Face (7860)
-EXPOSE 7860
+# Rendre le script de démarrage exécutable
+RUN chmod +x start.sh
 
-# Lancement de l'API FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Définir le port (HF utilise 7860)
+EXPOSE 7860 
+
+# Point d'entrée (utilise start.sh)
+CMD ["./start.sh"]
