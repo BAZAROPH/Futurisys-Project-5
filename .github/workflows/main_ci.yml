@@ -92,7 +92,7 @@ jobs:
 
       #Phase de déploiement
       - name: Deploy to Hgging Face Spaces
-        if : github.ref == 'refs/head/main'
+        if: github.ref == 'refs/heads/main'
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_USERNAME: ${{ secrets.HF_USERNAME }}
