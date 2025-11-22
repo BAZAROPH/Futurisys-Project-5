@@ -45,7 +45,6 @@ jobs:
         run: |
           git config --global user.email "bazaroph@gmail.com"
           git config --global user.name "GitHub Actions"
-
       - name: Deploy to Hugging Face Spaces
         if: github.ref == 'refs/heads/main'
         env:
@@ -54,5 +53,7 @@ jobs:
           HF_SPACE_NAME: ${{ secrets.HF_SPACE_NAME }}
         run: |
           echo "Déploiement en production sur Hugging Face Spaces..."
-          git push https://$HF_TOKEN@huggingface.co/spaces/$HF_USERNAME/$HF_SPACE_NAME main
+          git remote remove space || true
+          git remote add space https://$HF_TOKEN@huggingface.co/$HF_USERNAME/$HF_SPACE_NAME
+          git push space main
       
