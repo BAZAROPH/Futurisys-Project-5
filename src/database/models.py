@@ -2,7 +2,7 @@
 
 from sqlalchemy import Column, Integer, Float, String, DateTime
 from sqlalchemy.orm import declarative_base
-from datetime import datetime, UTC
+from datetime import datetime, timezone
 
 Base = declarative_base()
 
@@ -14,7 +14,7 @@ class Interaction(Base):
     __tablename__ = "ml_interactions"
 
     id = Column(Integer, primary_key=True, index=True)
-    timestamp = Column(DateTime, default=datetime.now(UTC))
+    timestamp = Column(DateTime, default=datetime.now(timezone.utc))
 
     #Outputs du modèle
     prediction_class = Column(Integer, nullable=False)
