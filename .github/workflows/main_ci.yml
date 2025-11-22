@@ -62,7 +62,7 @@ on:
 jobs:
   build-test-and-deploy:
     #Exécuter la dernière version de ubuntu
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
 
     #Cycle CI/CD
     
