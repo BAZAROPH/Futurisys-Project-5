@@ -3,10 +3,10 @@
 #Déclenchement sur chaque push ou pull resquest sur la branche 'develop'
 on:
   push:
-    branches: [ develop ]
+    branches: [ develop, main ]
   
   pull_request:
-    branches: [ develop ]
+    branches: [ develop, main ]
 
 jobs:
   build-test-and-deploy:
