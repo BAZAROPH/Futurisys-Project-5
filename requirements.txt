@@ -1,6 +1,7 @@
 #API
 fastapi
 uvicorn
+httpx
 
 #Validation
 pydantic

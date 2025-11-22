@@ -35,7 +35,7 @@ def predict(data: DataInput, db: Session = Depends(get_db)):
 
     #Appel du pipeline complet
     result = get_prediction(raw_data_dict)
-    print(result)
+
     if "error" in result:
         #Gère les erreur de chargement ou de preprocessing
         raise HTTPException(status_code=500, detail=result["error"])
