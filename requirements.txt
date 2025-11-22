@@ -26,3 +26,6 @@ seaborn
 sqlalchemy #orm de gestion de bd python
 psycopg2-binary #pilote python pour postgresql
 python-dotenv #gestion du fichier d'environneùment
+
+#Hugging face
+gunicorn
